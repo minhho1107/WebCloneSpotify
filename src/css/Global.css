@@ -1,0 +1,581 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&family=Roboto:wght@300;400;700&display=swap');
+
+:root {
+    --primary-color-base: #1ed760;
+    --background-noise: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjc1IiBzdGl0Y2hUaWxlcz0ic3RpdGNoIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGZpbHRlcj0idXJsKCNhKSIgb3BhY2l0eT0iLjA1IiBkPSJNMCAwaDMwMHYzMDBIMHoiLz48L3N2Zz4=);
+    --primary-color-highlight: #1fdf64;
+    --card-container-border-radius: clamp(4px,(var(--column-width,0px) - 32px) * 0.025,8px);
+    --card-image-border-radius: clamp(4px,(var(--column-width,0px) - 32px) * 0.025,8px);
+    --primary-color-press: #169c46;
+    --white-color: #fff;
+    --black-color: #000;
+    --navbar-height: 64px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+html {
+    font-size: 80%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    color: #A7A7A7;
+}
+
+ul {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Header */
+
+.header {
+    display: flex;
+    position: relative;
+    height: 30vh;
+    max-height: 500px;
+    min-height: 340px;
+    padding: 0 32px 24px 32px;
+}
+.colorThumbail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.colorShadowThumbail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(transparent 0,rgba(0, 0, 0, .5) 100%), var(--background-noise);
+}
+
+.nameContent h1 {
+    font-weight: 900;
+    margin: 0.08em 0px 0.12em;
+    visibility: visible;
+    width: 100%;
+    font-size: 6rem;
+}
+
+.thumbail {
+    width: 232px;
+    height: 232px;
+    display: flex;
+    align-items: flex-end;
+    align-self: flex-end;
+    margin-right: 24px;
+    z-index: 0
+}
+
+.thumbail img {
+    width: 232px;
+    height: 232px;
+    box-shadow: 0 4px 60px rgba(0,0,0,.5);;
+}
+
+.content {
+    z-index: 0;
+    color: #fff;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    flex: 1;
+}
+
+.title {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.nameContent {
+    display: flex;
+    line-height: normal;
+    margin-top: 8px;
+    overflow: hidden;
+    text-align: left;
+    width: 100%;
+    word-break: break-word;
+}
+
+.nameContent h1 {
+    font-size: 7rem;
+}
+
+.description {
+    display: flex;
+    align-items: center;
+}
+
+.description div img {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 4px;
+}
+
+.description div {
+    display: flex;
+    align-items: center;
+}
+
+.description div span {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.dot {
+    font-size: 1.25rem;
+    display: flex;
+}
+
+.timeofSongs {
+    color: hsla(0,0%,100%,.7);
+}
+
+.dot::before {
+    content: "•";
+    margin: 0 4px;
+    font-size: 1.75rem;
+    font-weight: 400;
+}
+/* Card */
+
+.card {
+    z-index: 0 !important;
+    /* width: 188px; */
+    height: 278px;
+    width: calc(100%/6.655);
+    /* width: calc(100% / 5); */
+    background: #181818;
+    border-radius: calc(var(--card-container-border-radius) + 2px);
+    isolation: isolate;
+    padding: 16px;
+    transition: background-color .3s ease;
+    position: relative;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1500px){
+    .card {
+        width: 188px;
+    }
+}
+
+.card:hover {
+    background: #282828;
+}
+
+.card:hover .cardPlay {
+    opacity: 1;
+}
+
+.cardContainer {
+    width: 100%;
+}
+
+.cardThumbail {
+    width: 154px;
+    height: 154px;
+    margin-bottom: 16px;
+    position: relative;
+}
+
+.cardImage {
+    border-radius: var(--card-image-border-radius);
+    box-shadow: 0 8px 24px rgba(0,0,0,.5);
+    position: relative;
+}
+
+.cardImage img {
+    border-radius: var(--card-image-border-radius);
+    width: 100%;
+    height: 100%;
+}
+
+.cardPlay {
+    position: absolute;
+    opacity: 0;
+    right: 8px;
+    bottom: 12px;
+    width: 48px;
+    height: 48px;
+    pointer-events: none;
+    border-radius: 500px;
+    box-shadow: 0 8px 8px rgba(0,0,0,.3);
+    transition: all .3s ease;
+    z-index: 2;
+}
+
+.cardPlay button {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: 0px;
+    border-radius: 500px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.iconButtonCard {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color-base, #1ed760);
+    border-radius: 500px;
+    width: 100%;
+    height: 100%;
+}
+
+.innerButtonCard {
+
+}
+
+.cardSongs {
+    min-height: 62px;
+}
+
+.cardSongs a {
+    padding-bottom: 4px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.cardSongs div {
+    margin-top: 4px;
+}
+
+.cardSongs div a {
+    font-weight: 400;
+    font-size: 1.125rem;
+    color: #b3b3b3;
+}
+
+/* Home */
+.sideBarHome {
+    margin-right: 240px;
+}
+
+/* Sidebar */
+.navSidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 240px;
+    z-index: 2;
+    background-color: #000;
+    /* height: 90vh; */
+    height: 100%;
+}
+
+.navMain {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding-top: 24px;
+    user-select: none;
+}
+
+.logo {
+    display: flex;
+}
+
+.logo a {
+    margin-bottom: 18px;
+    padding: 0 24px;
+}
+
+.logoSvg {
+    max-width: 131px;
+    height: 40px;
+}
+
+.navDashboard li a span {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    color: #A7A7A7;
+}
+
+.navDashboard li a svg:hover path {
+    fill: #fff;
+}
+
+.navDashboard li:hover ~ .navDashboard li a span {
+    color: #fff;
+}
+
+.navDashboard li a {
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    gap: 16px;
+    height: 40px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.navList {
+    margin-top: 24px;
+    flex: 1;
+}
+
+.navListContainer div button {
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    gap: 16px;
+    height: 40px;
+    border: none;
+    background-color: transparent;
+    color: #fff;
+}
+
+.containerNavListIcon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+.containerNavListIcon div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 2px;
+}
+
+.iconLikeSongs div {
+    background: linear-gradient(135deg,#450af5,#c4efd9);
+}
+
+.lineSideBar hr {
+    background-color: #282828;
+    border: none;
+    height: 1px;
+    margin: 0 24px;
+    margin-top: 8px;
+    min-height: 1px;
+}
+
+.navCookie {
+    max-width: 32px 0;
+    padding: 0 24px;
+    text-align: start;
+}
+
+.navCookie a {
+    color: #b3b3b3;
+    padding-right: 16px;
+}
+
+
+.navBottom {
+    margin-bottom: 32px;
+    padding: 0 24px;
+}
+
+.navLanguage button {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 500px;
+    border: 1px solid #727272;
+    color: #fff;
+    padding: 3px 15px 3px 32px;
+}
+
+/* Navbar */
+.navbarHeader {
+    width: calc(100% - 240px);
+    position: fixed;
+    display: flex;
+    height: 64px;
+    background-color: rgba(0, 0, 0, 0.2);
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10 !important;
+    padding: 16px 32px;
+}
+
+.navbarLayout {
+    z-index: 3;
+    width: 100%;
+    position: fixed;
+    top: 0;
+}
+
+.chevronRoute {
+    display: flex;
+    gap: 16px;
+}
+
+.btnChevron {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 50%;
+    cursor: pointer;
+    color: #fff;
+    border: none;
+}
+
+.VgSbatGBB9XwTH2_dsxg .IYDlXmBmmUKHveMzIPCF {
+    opacity: 1;
+}
+
+.kcBZLg {
+    fill: currentcolor;
+}
+
+.buttonNavbar{
+    padding: 10px 15px;
+    font-size: 15px;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    border-radius: 500px;
+    border: 0px;
+}
+
+.buttonNavbarContainer {
+    display: flex;
+}
+
+.buttonNavbarContainer ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.buttonNavbarContainer ul li button {
+}
+
+.lineNavbar {
+    background: #fff;
+    height: 25px;
+    margin: 16px;
+    width: 1px;
+}
+
+.buttonLogin {
+    font-size: 15px;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    border-radius: 500px;
+    border: 0px;
+    padding: 8px 32px;
+}
+
+.login {
+    display: flex;
+}
+
+/* Home page */
+#mainHome {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+}
+#containerMainHome {
+    width: 100%;
+    height: calc(100% - 90px);
+    display: flex;
+}
+
+.containercontentMainHome {
+    width: calc(100% - 240px);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+
+/* Lyrics */
+.lyricSong {
+    position: fixed;
+    top: 0;
+    left: 200;
+    z-index: 2;
+    overflow-y: scroll;
+    width: 84.4%;
+    height: calc(100% - 90px);
+}
+
+#contentLyrics {
+    margin: 0 288px;
+    margin-top: 128px;
+    margin-bottom: 15px;
+    color: #000;
+}
+
+#contentLyrics h2 {
+    opacity: 0.25;
+    font-size: 2.25rem;
+    font-weight: 700;
+    line-height: 1.5em;
+    cursor: pointer;
+}
+
+#contentLyrics .current {
+    font-size: 3rem;
+    opacity: 1;
+    font-weight: 700;
+    line-height: 1.5em;
+    cursor: pointer;
+}
+
+#contentLyrics .current + h2 {
+    font-size: 2.5rem;
+    opacity: 0.5;
+    font-weight: 700;
+    line-height: 1.5em;
+    cursor: pointer;
+}
+

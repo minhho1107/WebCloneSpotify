@@ -1,0 +1,106 @@
+.action-button{
+    background-color:transparent;
+    border: none;
+    margin-left: 20px;
+  }
+  
+  .svg-icon{
+    background-color:transparent;
+  }
+  .menu-wrapper {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    top: 30;
+    left: 30px;
+    margin-top: 10px;
+    background-color: #fff;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+  }
+  
+  .menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menu li a {
+    display: block;
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .menu li a:hover {
+    background-color: lightgray;
+  }
+  
+  
+  .action-button:focus + .menu-wrapper {
+    display: block;
+  }
+  
+  .action-button:active + .menu-wrapper {
+    display: block;
+  }
+  
+  .action-button:focus-visible + .menu-wrapper {
+    display: block;
+  }
+
+  /* artist */
+ .top-artists-wrapper .top-artists-title {
+    color: #fff;
+    font-size: 20px;
+    padding: 10px;
+    margin-left: 15px
+  }
+
+  .top-artists-wrapper .top-artists-subtitle{
+    padding: 10px;
+    margin-left: 15px;
+   } 
+  /* * card artist * */
+  .card-artist {
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;
+    margin: 20px; 
+    max-width: 1500px;
+    margin-left: 30px;
+    padding: 10px;
+    }
+    .card-newplay > *{
+        margin: 10px;
+    }
+    /* tracks */
+ .top-tracks-wrapper{
+  width: 1295px;
+  height: 292px;
+ } 
+ .top-tracks-wrapper .top-tracks-title {
+  color: #fff;
+  font-size: 20px;
+  padding: 10px;
+  margin-left: 15px
+}
+
+.top-tracks-wrapper .top-tracks-subtitle{
+  padding: 10px;
+  margin-left: 15px;
+ }
+
+ /* public playlist */
+ .draggable-item {
+  display: flex;
+  justify-content: flex-start; 
+  align-items: center;
+  margin: 20px; 
+  max-width: 1500px;
+  }
+  .draggable-item > *{
+      margin: 10px;
+  }
+

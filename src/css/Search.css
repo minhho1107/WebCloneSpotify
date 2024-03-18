@@ -1,0 +1,83 @@
+
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
+
+}
+
+input[type="search"] {
+    padding:  5px 10px; /* Khoảng cách giữa input và placeholder/nội dung */
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    font-size: 16px;
+    width: 300px;
+    position: absolute;
+    left: 10%;
+    text-align: left; /* Đưa placeholder và nội dung sang phải */
+  }
+  
+  input[type="search"]::placeholder {
+    text-align: left; /* Đưa placeholder sang phải */
+  }
+  
+  input[type="search"]:focus {
+    outline: none;
+    border-color: #66afe9;
+    box-shadow: 0 0 5px rgba(102, 175, 233, 0.5);
+  }
+  
+  
+.containerSearch {
+    margin-top: 100px;
+    margin-left: 20px;
+    padding: 20px;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    
+}
+.cardSearch {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 166px;
+    height: 166px;
+}
+
+.containerSearch a{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+.containerSearch a .cardSearch .cardSearch-header .cardSearch-title{ 
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px;
+    
+}
+.cardSearch-header {
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    height: 50%;
+    font-size: 30px;
+    color: #fff;
+}
+
+.cardSearch-body {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    height: 50%;
+}
+
+.cardSearch-body img {
+    position: absolute;
+    height: 50%;
+    transform: rotate(25deg);
+    overflow: hidden;
+}
+

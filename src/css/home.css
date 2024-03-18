@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #141414;
+}
+h1 {
+    color: #FFFFFF;
+    size: 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 50px;
+    margin-left: 25px;
+}
+.container{
+    margin-top: 84px;
+    margin-bottom: 110px;
+}
+.showAll {
+  display: inline-block;
+  color: #fff;
+  font-size: 19px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-left: 1175px;
+  font-weight: bold;
+}
+
+
+.h1TitleHome {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+/* card newplay */
+.card-newplay {
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;
+    margin-left: 15px; 
+    flex-wrap: wrap;
+    max-width: 1500px;
+    }
+    
+    .card-newplay > *{
+        margin: 10px;
+    }
+
+
+    
+/* car showtest */
+.card-showtest {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; 
+    align-items: center;
+    margin-left: 15px; 
+    max-width: 1500px;
+    }
+    .card-showtest > *{
+        margin: 10px;
+    }
+/* class hãy thử cách khác */
+.haythucachkhac {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; 
+    align-items: center;
+    margin-left: 15px; 
+    max-width: 1500px;
+    }
+    .haythucachkhac > *{
+        margin: 10px;
+    }
+/* class bảng xếp hạng nối bật */
+.bangxephangnoibat {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; 
+    align-items: center;
+    margin-left: 15px; 
+    max-width: 1500px;
+    }    
+    .bangxephangnoibat > *{
+        margin: 10px;
+    }
